@@ -630,43 +630,51 @@ def chatbot(message, history):
 
     try:
 
+        print("=" * 60)
+        print("USER QUESTION:", message)
+
         results = search_documents(
             message,
-            top_k=1
+            top_k=3
         )
 
-        if not results:
+        print("NUMBER OF RESULTS:", len(results))
 
-            return (
-                "I could not find a relevant answer "
-                "in the document."
+        if not results:
+            print("NO RESULTS")
+            return "No results found."
+
+        for i, result in enumerate(results, 1):
+
+            print(
+                f"RESULT {i} SCORE:",
+                result["score"]
             )
+
+            print(
+                "TEXT:",
+                result["text"][:300]
+            )
+
+        # DO NOT reject based on 0.30 yet
 
         result = results[0]
 
-        if result["score"] < 0.30:
-
-            return (
-
-                "I could not find sufficiently relevant "
-                "information in the document."
-            )
-
         return (
-            f"### Answer\n\n"
+            f"### Retrieved Answer\n\n"
             f"{result['text']}\n\n"
             f"---\n\n"
-            f"**Source:** {result['source']}\n\n"
-            f"**Chapter:** {result['chapter']}\n\n"
-            f"**Section:** {result['section']}\n\n"
-            f"**Similarity:** {result['score']:.3f}"
+            f"**Similarity:** "
+            f"{result['score']:.3f}"
         )
 
     except Exception as e:
 
-        return f"Error: {type(e).__name__}: {e}"
+        print("ERROR:", type(e).__name__, str(e))
 
-
+        return (
+            f"Error: {type(e).__name__}: {e}"
+        )
  # ---------------------------------------------------------
 # Launch
 # ---------------------------------------------------------
