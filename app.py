@@ -1,14 +1,14 @@
 ---
-title: DocAI
-emoji: 📉
-colorFrom: purple
-colorTo: red
+title: Doc
+emoji: 🌍
+colorFrom: gray
+colorTo: green
 sdk: gradio
 sdk_version: 6.25.0
 python_version: '3.12'
 app_file: app.py
 pinned: false
-short_description: Doc AI Intelligence
+short_description: AI Doc
 ---
 
 import re
