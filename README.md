@@ -1,6 +1,6 @@
 ---
 title: Doc
-emoji: 🌍
+emoji: 🫡
 colorFrom: gray
 colorTo: green
 sdk: gradio
