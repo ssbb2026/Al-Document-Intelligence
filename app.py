@@ -1,4 +1,4 @@
-pip --upgrade
+
 import re
 import numpy as np
 import faiss
