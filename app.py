@@ -1,15 +1,13 @@
-
-title: {{title}}
-emoji: {{emoji}}
-colorFrom: {{colorFrom}}
-colorTo: {{colorTo}}
-sdk: {{sdk}}
-sdk_version: "{{sdkVersion}}"
-{{#pythonVersion}}
-python_version: "{{pythonVersion}}"
-{{/pythonVersion}}
+title: DocAI
+emoji: 📉
+colorFrom: purple
+colorTo: red
+sdk: gradio
+sdk_version: 6.25.0
+python_version: '3.12'
 app_file: app.py
 pinned: false
+short_description: Doc AI Intelligence
 
 
 import re
