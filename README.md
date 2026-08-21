@@ -11,6 +11,7 @@ pinned: false
 short_description: AI Doc
 ---
 # AI Document Intelligence & Semantic Retrieval
+Project Link-https://huggingface.co/spaces/ssbb2026/Doc
 
 An AI document retrieval system that extracts PDF content,
 creates semantic embeddings, and retrieves the most relevant
