@@ -1,12 +1,14 @@
 ---
-title: Gradio AI Document Intelligence & Semantic Retrieval
-emoji: 📄
-colorFrom: blue
-colorTo: indigo
+title: Doc
+emoji: 🌍
+colorFrom: gray
+colorTo: green
 sdk: gradio
 sdk_version: 6.25.0
+python_version: '3.12'
 app_file: app.py
 pinned: false
+short_description: AI Doc
 ---
 # AI Document Intelligence & Semantic Retrieval
 
