@@ -1,16 +1,4 @@
----
-title: Doc
-emoji: 🌍
-colorFrom: gray
-colorTo: green
-sdk: gradio
-sdk_version: 6.25.0
-python_version: '3.12'
-app_file: app.py
-pinned: false
-short_description: AI Doc
----
-
+pip --upgrade
 import re
 import numpy as np
 import faiss
