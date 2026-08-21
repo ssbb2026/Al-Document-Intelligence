@@ -1,27 +1,21 @@
-name: Sync GitHub to Hugging Face Hub
+name: Sync to Hugging Face Hub
+
 on:
   push:
     branches: [main]
+  workflow_dispatch:
 
 jobs:
   sync:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v6
-      - uses: huggingface/hub-sync@v0.1.0
+      - name: Checkout repository
+        uses: actions/checkout@v6
+
+      - name: Sync to Hugging Face
+        uses: huggingface/hub-sync@v0.1.0
         with:
           github_repo_id: ${{ github.repository }}
-          huggingface_repo_id: ssbb2026/repo-name
-          hf_token: ${{ secrets.HF_TOKEN }}- uses: huggingface/hub-sync@v0.1.0
-  with:
-    # Required
-    github_repo_id: ${{ github.repository }}
-    huggingface_repo_id: ssb2026 /Susmi
-    hf_token: ${{ secrets.HF_TOKEN }}
-    
-    # Optional
-    repo_type: space              # space | model | dataset (default: space)
-    space_sdk: gradio             # gradio | streamlit | docker | static (default: gradio)
-    private: false                # Create as private (default: false)
-    subdirectory: ''              # Sync only this folder (default: '' = root)
-          
+          huggingface_repo_id: ssbb2026/AIIntel # <-- REPLACE WITH YOUR USERNAME/REPO
+          hf_token: ${{ secrets.HF_TOKEN }}
+          repo_type: space
