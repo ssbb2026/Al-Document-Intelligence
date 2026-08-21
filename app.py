@@ -8,7 +8,7 @@ import pymupdf4llm
 
 from sentence_transformers import SentenceTransformer
 
-PDF_FILE = "Earth Our Planet data from web.pdf"
+PDF_FILE = "data/Earth Our Planet data from web.pdf"
 
 
 ##CHUNKING
