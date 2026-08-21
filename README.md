@@ -17,19 +17,19 @@ information using FAISS.
 ## Architecture
 
 PDF
-↓
+→ 
 PyMuPDF4LLM
-↓
+→ 
 Markdown
-↓
+→ 
 Structure-aware Chunking
-↓
+→ 
 Sentence Transformers
-↓
+→ 
 FAISS
-↓
+→ 
 Semantic Search
-↓
+→ 
 Gradio
 
 ## Features
