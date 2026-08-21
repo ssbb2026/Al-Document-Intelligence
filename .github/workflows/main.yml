@@ -16,6 +16,6 @@ jobs:
         uses: huggingface/hub-sync@v0.1.0
         with:
           github_repo_id: ${{ github.repository }}
-          huggingface_repo_id: ssbb2026/DocAI # <-- REPLACE WITH YOUR USERNAME/REPO
+          huggingface_repo_id: ssbb2026/Doc # <-- REPLACE WITH YOUR USERNAME/REPO
           hf_token: ${{ secrets.HF_TOKEN }}
           repo_type: space
