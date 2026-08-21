@@ -383,6 +383,22 @@ documents = chunk_document(text=text,source='Earth Our Planet data from web.pdf'
 
 ##EMBEDDINGS
 
+# model = SentenceTransformer(
+#     "sentence-transformers/all-MiniLM-L6-v2"
+# )
+
+# texts = [
+#     document["text"]
+#     for document in documents
+# ]
+
+# embeddings = model.encode(
+#     texts,
+#     normalize_embeddings=True,
+#     show_progress_bar=True
+# )
+import spaces
+
 model = SentenceTransformer(
     "sentence-transformers/all-MiniLM-L6-v2"
 )
@@ -392,11 +408,17 @@ texts = [
     for document in documents
 ]
 
-embeddings = model.encode(
-    texts,
-    normalize_embeddings=True,
-    show_progress_bar=True
-)
+
+@spaces.GPU
+def generate_embeddings(texts):
+    return model.encode(
+        texts,
+        normalize_embeddings=True,
+        show_progress_bar=True
+    )
+
+
+embeddings = generate_embeddings(texts)
 
 print("Embedding shape:", embeddings.shape)
 
