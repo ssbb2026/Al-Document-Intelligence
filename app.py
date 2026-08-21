@@ -1,11 +1,16 @@
+import spaces
 
+import os
+import gradio as gr
+import torch
+from sentence_transformers import SentenceTransformer
 import re
 import numpy as np
 import faiss
-import gradio as gr
+
 import pymupdf4llm
 
-from sentence_transformers import SentenceTransformer
+
 
 PDF_FILE = "Earth Our Planet data from web.pdf"
 
