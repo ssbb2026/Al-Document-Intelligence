@@ -12,16 +12,30 @@ import pymupdf4llm
 
 
 
-PDF_FILE = "Earth Our Planet data from web.pdf"
+# ==============================
+# PDF PATH
+# ==============================
 
-# =========================================================
-# EXTRACT TEXT FROM PDF
-# =========================================================
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
+PDF_FILE = os.path.join(
+    BASE_DIR,
+    "Earth Our Planet data from web.pdf"
+)
+
+if not os.path.exists(PDF_FILE):
+    raise FileNotFoundError(
+        f"PDF not found: {PDF_FILE}"
+    )
+
+
+# ==============================
+# READ PDF
+# ==============================
 
 text = pymupdf4llm.to_markdown(PDF_FILE)
 
 print("Extracted characters:", len(text))
-
 
 ##CHUNKING
 
